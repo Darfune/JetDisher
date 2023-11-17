@@ -21,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.compose.AsyncImagePainter
-import com.example.jetdisher.data.models.CategortResponse.Category
+import com.example.jetdisher.data.remote.models.CategortResponse.Category
 
 @Composable
 fun CategoryItem(category: Category) {

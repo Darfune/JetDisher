@@ -1,12 +1,12 @@
 package com.example.jetdisher.ui.screens.categories
 
-import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.jetdisher.data.models.CategortResponse.Category
+import com.example.jetdisher.data.remote.models.CategortResponse.Category
+import com.example.jetdisher.domain.usecases.categories.InterfaceGetCategoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

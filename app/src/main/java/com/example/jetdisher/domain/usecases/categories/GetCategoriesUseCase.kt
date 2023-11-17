@@ -1,7 +1,7 @@
-package com.example.jetdisher.ui.screens.categories
+package com.example.jetdisher.domain.usecases.categories
 
-import com.example.jetdisher.data.models.CategortResponse.CategoryResponse
-import com.example.jetdisher.repositories.remote.InterfaceCategoriesRepository
+import com.example.jetdisher.data.remote.models.CategortResponse.CategoryResponse
+import com.example.jetdisher.data.remote.repositories.InterfaceCategoriesRepository
 import javax.inject.Inject
 
 interface InterfaceGetCategoriesUseCase {

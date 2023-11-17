@@ -1,7 +1,7 @@
-package com.example.jetdisher.repositories.remote
+package com.example.jetdisher.data.remote.repositories
 
-import com.example.jetdisher.data.models.CategortResponse.CategoryResponse
-import com.example.jetdisher.repositories.network.CategoriesService
+import com.example.jetdisher.data.remote.models.CategortResponse.CategoryResponse
+import com.example.jetdisher.domain.repositories.network.CategoriesService
 import javax.inject.Inject
 
 interface InterfaceCategoriesRepository{
