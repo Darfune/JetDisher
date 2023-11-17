@@ -6,16 +6,22 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.jetdisher.ui.screens.categories.CategoriesScreen
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
+import com.example.jetdisher.ui.screens.categories.CategoriesViewModel
+import com.example.jetdisher.ui.screens.dishes.DishesAssistedFactory
+import com.example.jetdisher.ui.screens.dishes.DishesViewModel
+import com.example.jetdisher.ui.navigation.DisherNavigation
 import com.example.jetdisher.ui.theme.JetDisherTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var dishesAssistedFactory: DishesAssistedFactory
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -25,10 +31,22 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CategoriesScreen()
+                    JetDisherApp()
                 }
             }
         }
+
+    }
+
+    @Composable
+    fun JetDisherApp() {
+        val categoriesViewModel: CategoriesViewModel = viewModel()
+        val navController = rememberNavController()
+        DisherNavigation(
+            categoriesViewModel = categoriesViewModel,
+            dishesAssistedFactory = dishesAssistedFactory,
+            navController = navController
+        )
     }
 }
 

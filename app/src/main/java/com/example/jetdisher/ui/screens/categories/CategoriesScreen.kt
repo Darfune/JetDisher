@@ -10,16 +10,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun CategoriesScreen(
-   viewModel: CategoriesViewModel  = hiltViewModel()
+    viewModel: CategoriesViewModel = hiltViewModel(),
+    categoryClicked: (String) -> Unit
 ) {
-   val listOfCategories by remember {
-      viewModel.listOfCategories
-   }
-   Column {
-      LazyColumn {
-         items(listOfCategories){ category ->
-            CategoryItem(category = category)
-         }
-      }
-   }
+    val listOfCategories by remember {
+        viewModel.listOfCategories
+    }
+    Column {
+        LazyColumn {
+            items(listOfCategories) { category ->
+                CategoryItem(
+                    category = category,
+                    categoryClicked
+                )
+            }
+        }
+    }
 }

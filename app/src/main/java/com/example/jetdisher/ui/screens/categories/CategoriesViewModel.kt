@@ -5,15 +5,15 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.jetdisher.data.remote.models.CategortResponse.Category
-import com.example.jetdisher.domain.usecases.categories.InterfaceGetCategoriesUseCase
+import com.example.jetdisher.data.remote.models.categories.Category
+import com.example.jetdisher.domain.usecases.categories.IGetCategoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class CategoriesViewModel @Inject constructor(
-    useCase: InterfaceGetCategoriesUseCase
+    useCase: IGetCategoriesUseCase
 ) : ViewModel() {
 
     private val _listOfCategories: MutableState<List<Category>> = mutableStateOf(emptyList())

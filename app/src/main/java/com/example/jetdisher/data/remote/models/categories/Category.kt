@@ -1,4 +1,4 @@
-package com.example.jetdisher.data.remote.models.CategortResponse
+package com.example.jetdisher.data.remote.models.categories
 
 data class Category(
     val idCategory: String,
